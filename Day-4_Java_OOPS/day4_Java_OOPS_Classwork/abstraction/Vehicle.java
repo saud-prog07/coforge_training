@@ -1,0 +1,12 @@
+package com.coforge.day4.abstraction;
+
+public abstract class Vehicle implements VehiclePlan {
+	public void noOfEngine() {
+		System.out.println("I have One Engine");
+	}
+	
+	public abstract void noOfWheels();
+	
+	public abstract void brandName();
+	
+}
