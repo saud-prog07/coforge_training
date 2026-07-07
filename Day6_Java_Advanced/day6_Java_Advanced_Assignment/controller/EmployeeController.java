@@ -32,13 +32,15 @@ public class EmployeeController {
 	public String findEmployee(int empid) {
 		String result = "";
 		try {
-			result = service.findEmployee(empid).toString();
+			Employee employee = service.findEmployee(empid);
+			if(employee != null) result = employee.toString();
+			else result = ApplicationProperties.employeeNotFound;
 		} catch (ClassNotFoundException e) {
 			result = ApplicationProperties.dbFailed;
 		} catch (SQLException e) {
 			result = ApplicationProperties.dbFailed;
 		} catch (InvalidEmployeeObjectException e) {
-			result = ApplicationProperties.dbFailed;
+			e.toString();
 		}
 		return result;
 	}
@@ -94,10 +96,10 @@ public class EmployeeController {
 		return result;
 	}
 
-	public String displayAll() {
+	public String findAll() {
 		String result = "";
 		try {
-			result = service.displayAll().toString();
+			result = service.findAll().toString();
 		} catch (ClassNotFoundException e) {
 			result = ApplicationProperties.dbFailed;
 		} catch (SQLException e) {
