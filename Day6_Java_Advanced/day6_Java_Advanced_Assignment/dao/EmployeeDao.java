@@ -85,7 +85,7 @@ public class EmployeeDao {
 		n = statement.executeUpdate();
 		return n;
 	}
-	public List<Employee> displayAll() throws ClassNotFoundException, SQLException {
+	public List<Employee> findAll() throws ClassNotFoundException, SQLException {
 		Connection connection = DBUtil.getDBConnection();
 
 		PreparedStatement statement = connection.prepareStatement(ApplicationProperties.findAll);
