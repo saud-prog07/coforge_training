@@ -20,6 +20,7 @@ public class ApplicationProperties {
 	public static final String dbFailed = "Failed : DB ERROR";
 	public static final String updateSucess = "Success : Employee Record Updated";
 	public static final String deleteSuccess = "Success : Employee Record deleted";
+	public static final String employeeNotFound = "Employee Not Found";
 
 	// Application Validation Failed
 
