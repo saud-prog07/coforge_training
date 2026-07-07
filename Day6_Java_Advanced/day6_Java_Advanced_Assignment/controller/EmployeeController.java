@@ -48,7 +48,7 @@ public class EmployeeController {
 		try {
 			int n = service.updateSalary(empid, salary);
 			if (n == 1) {
-				result = "Success : Employee Record Inserted";
+				result = ApplicationProperties.updateSuccess;
 			}
 		} catch (ClassNotFoundException e) {
 			result =  ApplicationProperties.dbFailed;
@@ -65,7 +65,7 @@ public class EmployeeController {
 		try {
 			int n = service.updateDepartmentNumber(empid, deptno);
 			if (n == 1) {
-				result = "Success : Employee Record Inserted";
+				result = ApplicationProperties.updateSuccess;
 			}
 		} catch (ClassNotFoundException e) {
 			result =  ApplicationProperties.dbFailed;
@@ -82,7 +82,7 @@ public class EmployeeController {
 		try {
 			int n = service.delete(empid);
 			if (n == 1) {
-				result = "Success : Employee Record Inserted";
+				result = ApplicationProperties.deleteSuccess;
 			}
 		} catch (ClassNotFoundException e) {
 			result =  ApplicationProperties.dbFailed;
