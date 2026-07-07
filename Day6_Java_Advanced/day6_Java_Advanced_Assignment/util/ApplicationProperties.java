@@ -17,7 +17,9 @@ public class ApplicationProperties {
 
 	// Application Response Properties
 	public static final String insertSuccess = "Success : Employee Record Inserted";
-	public static String dbFailed = "Failed : DB ERROR";
+	public static final String dbFailed = "Failed : DB ERROR";
+	public static final String updateSucess = "Success : Employee Record Updated";
+	public static final String deleteSuccess = "Success : Employee Record deleted";
 
 	// Application Validation Failed
 
