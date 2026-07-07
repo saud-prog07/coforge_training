@@ -28,27 +28,27 @@ public class EmployeeDao {
 		return n;
 	}
 
-	public List<Employee> findEmployee(int empid) throws ClassNotFoundException, SQLException {
+	public Employee findEmployee(int empid) throws ClassNotFoundException, SQLException {
 		Connection connection = DBUtil.getDBConnection();
-
+        
 		
 		PreparedStatement statement = connection.prepareStatement(ApplicationProperties.findEmployee);
 		statement.setInt(1,empid);
 
 		ResultSet resultset1 = statement.executeQuery();
 		
-		List<Employee> listEmployee = new ArrayList<>();
+		Employee employee = null;
 		
-		while(resultset1.next()) {
-			Employee employee = new Employee();
+		if(resultset1.next()) {
+			employee = new Employee();
 			employee.setEid(resultset1.getInt("eid"));
 			employee.setEname(resultset1.getString("ename"));
 			employee.setEsalary(resultset1.getInt("esalary"));
 			employee.setDno(resultset1.getInt("dno"));
 			
-			listEmployee.add(employee);
+			
 		}
-		return listEmployee ;
+		return employee ;
 	}
 
 	public int updateSalary(int empid, int salary) throws ClassNotFoundException, SQLException {
