@@ -24,7 +24,7 @@ public class EmployeeController {
 		} catch (SQLException e) {
 			result = ApplicationProperties.dbFailed;
 		} catch (InvalidEmployeeObjectException e) {
-			result = ApplicationProperties.dbFailed;
+			e.toString();
 		}
 		return result;
 	}
@@ -51,11 +51,11 @@ public class EmployeeController {
 				result = "Success : Employee Record Inserted";
 			}
 		} catch (ClassNotFoundException e) {
-			result = "1Failed : DB ERROR";
+			result =  ApplicationProperties.dbFailed;
 		} catch (SQLException e) {
-			result = "2Failed : DB ERROR";
+			result =  ApplicationProperties.dbFailed;
 		} catch (InvalidEmployeeObjectException e) {
-			result = "3Failed : DB ERROR";
+			e.toString();
 		}
 		return result;
 	}
@@ -68,11 +68,11 @@ public class EmployeeController {
 				result = "Success : Employee Record Inserted";
 			}
 		} catch (ClassNotFoundException e) {
-			result = "1Failed : DB ERROR";
+			result =  ApplicationProperties.dbFailed;
 		} catch (SQLException e) {
-			result = "2Failed : DB ERROR";
+			result =  ApplicationProperties.dbFailed;
 		} catch (InvalidEmployeeObjectException e) {
-			result = "3Failed : DB ERROR";
+			e.toString();
 		}
 		return result;
 	}
@@ -85,11 +85,11 @@ public class EmployeeController {
 				result = "Success : Employee Record Inserted";
 			}
 		} catch (ClassNotFoundException e) {
-			result = "1Failed : DB ERROR";
+			result =  ApplicationProperties.dbFailed;
 		} catch (SQLException e) {
-			result = "2Failed : DB ERROR";
+			result =  ApplicationProperties.dbFailed;
 		} catch (InvalidEmployeeObjectException e) {
-			result = "3Failed : DB ERROR";
+			e.toString();
 		}
 		return result;
 	}
