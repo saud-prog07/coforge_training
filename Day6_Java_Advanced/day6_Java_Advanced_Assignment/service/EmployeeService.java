@@ -66,9 +66,9 @@ public class EmployeeService {
 		}
 		return n;
 	}
-	public List<Employee> displayAll()
+	public List<Employee> findAll()
 			throws ClassNotFoundException, SQLException, InvalidEmployeeObjectException {
-		List<Employee> employeelist = dao.displayAll();
+		List<Employee> employeelist = dao.findAll();
 		return employeelist;
 	}
 }
