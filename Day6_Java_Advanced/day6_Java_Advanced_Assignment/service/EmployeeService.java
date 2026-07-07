@@ -24,16 +24,16 @@ public class EmployeeService {
 		return n;
 	}
 
-	public List<Employee> findEmployee(int empid)
+	public Employee findEmployee(int empid)
 			throws ClassNotFoundException, SQLException, InvalidEmployeeObjectException {
-		List<Employee> listemployee ;
+		Employee employee = null;
 		if (empid > 0) {
-			listemployee = dao.findEmployee(empid);
+			employee = dao.findEmployee(empid);
 		} else {
 			throw new InvalidEmployeeObjectException();
 
 		}
-		return listemployee;
+		return employee;
 	}
 
 	public int updateSalary(int empid, int salary)
