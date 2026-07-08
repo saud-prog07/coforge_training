@@ -1,0 +1,43 @@
+@charset "ISO-8859-1";
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+table {
+    background-color: green;
+    border-collapse: collapse;
+    padding: 20px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+td, th {
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+	    background-color: royalblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover{
+	    background-color: royalblue;
+}
