@@ -1,0 +1,54 @@
+body {
+    font-family: "Times New Roman", serif;
+}
+
+table {
+    width: 70%;
+    margin: 50px auto;
+    border-collapse: separate;
+    border-spacing: 2px;  
+    border: 2px solid gray;
+}
+
+th,
+td {
+    border: 3px solid gray;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hours {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.day {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subject {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.lunch {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.project {
+    text-align: left;
+    padding-left: 15px;
+    vertical-align: middle;
+}

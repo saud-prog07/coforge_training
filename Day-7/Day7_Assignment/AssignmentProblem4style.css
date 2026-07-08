@@ -1,0 +1,43 @@
+body{
+    margin-top:40px;
+}
+
+.box{
+    text-align:center;
+    font-size:40px;
+    font-weight:bold;
+    border-radius:30px;
+    margin:10px 0;
+}
+
+.header{
+    background:#4f76c3;
+    color:black;
+    height:120px;
+    line-height:120px;
+}
+
+.column1{
+    background:#73b043;
+    height:330px;
+    line-height:330px;
+}
+
+.column2{
+    background:#f57c2a;
+    height:330px;
+    line-height:330px;
+}
+
+.column3{
+    background:#ffc107;
+    height:330px;
+    line-height:330px;
+}
+
+.footer{
+    background:#5b95cc;
+    height:60px;
+    line-height:60px;
+    font-size:25px;
+}
