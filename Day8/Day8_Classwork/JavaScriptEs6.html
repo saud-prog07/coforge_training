@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function add(a = 10 , b = 20) {
+document.write(a + b);
+}
+
+function add(a , b , ...args) {
+	console.log(a+b);
+	let total = 0;
+	for(let n of args) {
+		total = total + n;
+	}
+	document.write(total);
+}
+
+add(100,200,10,20,30);
+
+let arr = [11,12,13,14,15];
+let [x,y,z] = arr;
+console.log(x)
+console.log(y)
+console.log(z)
+let [a,b,c, ...args] = arr
+console.log(args)	
+
+//Before ES6
+let person = {
+	firstName : 'M',
+	lastName : 'Pranay'
+}
+let fname = person.firstName;
+let lname = person.lastName;
+console.log(fname);
+console.log(lname);
+
+//After ES6
+let person1 = {
+		firstName1 : 'P',
+		lastName1 : "Sriram"
+}
+let {firstName1 : fname1 , lastName1 : lname1} = person1;
+console.log(fname1);
+console.log(lname1);
+
+
+const addition = (a, b) => a + b;
+const welcome = (name) => "Welcome " + name;
+
+function myFunction() {
+	console.log(addition(12,2));
+	console.log(welcome("pranay"))
+}
+
+</script>
+</head>
+<body>
+<button onclick = "add()">Add</button>
