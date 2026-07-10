@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Registration Form</title>
-    <link rel="stylesheet" href="AssingmetProblem3.css">
-    <script type="text/javascript">
+<meta charset="UTF-8">
+<title>Registration Form</title>
+<link rel="stylesheet" href="AssingmetProblem3.css">
 
-    function passwordstrenght() {
+<script type="text/javascript">
 
-        var password = document.getElementById("pwd").value;
+function passwordstrenght() {
 
-        var req = new XMLHttpRequest();
+    var password = document.getElementById("pwd").value;
 
-        req.open("GET",
-        "http://localhost:8081/MyWebApplication/PasswordStrengthServlet?pwd=" + password,
-        true);
+    var req = new XMLHttpRequest();
 
-        req.onreadystatechange = function() {
+    req.open("GET",
+    "http://localhost:8081/MyWebApplication/PasswordStrengthServlet?pwd=" + password,
+    true);
 
-  
-            if(req.readyState == 4 && req.status == 200) {
+    req.onreadystatechange = function() {
 
-                document.getElementById("result").innerHTML = req.responseText;
-
-            }
-
+        if(req.readyState == 4 && req.status == 200) {
+            document.getElementById("result").innerHTML = req.responseText;
         }
 
-        req.send();
+    };
+
+    req.send();
+}
+
+function checkEmail() {
+	
+	
+    var email = document.getElementById("email").value;
+
+    var req = new XMLHttpRequest();
+
+    req.open("GET",
+    "http://localhost:8081/MyWebApplication/EmailCheck?email=" + email,
+    true);
+
+    req.onreadystatechange = function() {
+
+        if(req.readyState == 4 && req.status == 200) {
+            document.getElementById("emailResult").innerHTML = req.responseText;
+        }
 
     }
+    req.send();
+}
 
-    </script>
+</script>
+
 </head>
+
 <body>
 
 <form>
+
 <table>
 
 <tr>
@@ -64,28 +85,43 @@
 
 <tr>
     <td>Gender</td>
-<td>
-    <div class="gender">
-        <input type="radio" name="gender" id="male">
-        <label for="male">Male</label>
+    <td>
 
-        <input type="radio" name="gender" id="female">
-        <label for="female">Female</label>
-    </div>
-</td>
+        <input type="radio" name="gender">Male
+
+        <input type="radio" name="gender">Female
+
+    </td>
 </tr>
 
 <tr>
     <td>Email ID</td>
-    <td><input type="email"></td>
+
+    <td>
+
+        <input type="email"
+               id="email"
+               placeholder="Enter your email"
+               onblur="checkEmail()">
+
+        <span id="emailResult"></span>
+
+    </td>
+
 </tr>
 
 <tr>
-<td>Password</td>
-<td>
-    <input type="password" id="pwd" onkeyup="passwordstrenght()">
-    <span id="result"></span>
-</td>
+    <td>Password</td>
+
+    <td>
+
+        <input type="password"
+               id="pwd"
+               onkeyup="passwordstrenght()">
+
+        <span id="result"></span>
+
+    </td>
 </tr>
 
 <tr>
@@ -114,6 +150,8 @@
 </tr>
 
 </table>
+
 </form>
+
 </body>
 </html>
