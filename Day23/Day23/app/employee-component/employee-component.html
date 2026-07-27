@@ -1,0 +1,26 @@
+<h3>Employee List from Backend</h3>
+
+<div *ngIf="errorMessage" style="color: red; margin: 10px 0;">
+  {{ errorMessage }}
+</div>
+
+<table border="1" cellPadding="8" *ngIf="employees && employees.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{ emp.eid ?? emp.EmployeeID ?? emp.id }}</td>
+      <td>{{ emp.ename ?? emp.Name ?? emp.name }}</td>
+      <td>{{ emp.dno ?? emp.Department ?? emp.department }}</td>
+      <td>{{ emp.sal ?? emp.Salary ?? emp.salary }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="!errorMessage && employees.length === 0">No employees found.</p>

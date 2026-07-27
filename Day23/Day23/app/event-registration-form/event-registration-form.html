@@ -1,0 +1,13 @@
+<p>event-registration-form works!</p>
+<br>
+
+Name : <input type="text" [(ngModel)]="Name" />
+<br>
+Email : <input type="text" [(ngModel)]="Email" />
+<br>
+Course : <input type="text" [(ngModel)]="Course" />
+<br>
+<button (click)="register()">Register</button>
+<button (click)="reset()">Reset</button>
+<br>
+{{message}}

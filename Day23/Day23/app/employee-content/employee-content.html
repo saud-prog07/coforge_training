@@ -1,0 +1,12 @@
+<b>
+    <form #employeeform="ngForm" (ngSubmit)="saveEmployee(employeeform.value)">
+        <br>Enter Employee Deatils<br>
+        <input type="number" name="eid" #eid="ngModel" ngModel /><br>
+        <input type="text" name="ename" #ename="ngModel" ngModel /><br>
+        <input type="number" name="dno" #dno="ngModel" ngModel /><br>
+        <input type="number" name="sal" #sal="ngModel" ngModel /><br>
+        <button type="submit">Save (POST)</button>
+        <button type="button" (click)="updateEmployee(employeeform.value.eid, employeeform.value)">Update (PUT)</button><br>
+        {{result}}
+    </form>
+</b>

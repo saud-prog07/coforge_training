@@ -1,0 +1,92 @@
+<p>structural-directive works!</p>
+<br>
+
+<!--New Structoral Directive Form-->
+
+
+@if (flag) {
+<div [ngClass]="myDivStyle">
+
+    {{ message }}
+
+    <br>
+
+    <ul>
+        @for (vehicle of vehicles; track vehicle) {
+        <li (click)="onSelectVehicle(vehicle)">
+            {{ vehicle }}
+        </li>
+        }
+    </ul>
+
+    <br>
+
+    You have Selected : {{ selectedVehicle }}
+
+    <br>
+
+    @switch (selectedVehicle) {
+
+    @case ('Car') {
+    <img src="car.jpg" width="100" height="100">
+    }
+
+    @case ('Bike') {
+    <img src="bike.jpg" width="100" height="100">
+    }
+
+    @case ('Truck') {
+    <img src="truck.jpg" width="100" height="100">
+    }
+
+    @case ('Ship') {
+    <img src="ship.jpg" width="100" height="100">
+    }
+
+    @case ('Aeroplane') {
+    <img src="aeroplane.jpg" width="100" height="100">
+    }
+
+    @default {
+    <font color="red">Invalid selection</font>
+    }
+
+    }
+
+</div>
+}
+
+
+<button [ngStyle]="myButtonStyle" (click)="showHideDev()">Show Hide Dev</button>
+<br>
+<br>
+<div [ngClass]="myDivStyle" *ngIf="flag">
+    {{message}}
+    <br>
+    <ul>
+        <li *ngFor="let vehicle of vehicles" (click)="onSelectVehicle(vehicle)">{{vehicle}}</li>
+    </ul>
+    <br>
+    You have Selected : {{selectedVehicle}}
+    <br>
+    <div [ngSwitch]="selectedVehicle">
+        <div *ngSwitchCase="'Car'">
+            <img src="car.jpg" width="100px" height="100px">
+        </div>
+        <div *ngSwitchCase="'Bike'">
+            <img src="bike.jpg" width="100px" height="100px">
+        </div>
+        <div *ngSwitchCase="'Truck'">
+            <img src="truck.jpg" width="100px" height="100px">
+        </div>
+        <div *ngSwitchCase="'Ship'">
+            <img src="ship.jpg" width="100px" height="100px">
+        </div>
+        <div *ngSwitchCase="'Aeroplane'">
+            <img src="aeroplane.jpg" width="100px" height="100px">
+        </div>
+        <div>
+            <font color="red" *ngSwitchDefault>Invalid selection</font>
+        </div>
+    </div>
+</div>
