@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Management System</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class = "header">
+		<h1>Employee Management System</h1>
+	</div>
+	<br>
+    <form #employeeForm = "ngForm">
+		<div class = "content">
+        
+			<table>
+				<tr>
+					<td>Employee ID:</td>
+					<td><input type="text" name = "eid" id = "eid" #eid = "ngModel" ngModel></td>
+				</tr>
+				<tr>
+					<td>Employee Name:</td>
+					<td><input type="text" name = "ename" id = "ename" #ename = "ngModel" ngModel></td>
+				</tr>
+			
+				<tr>
+					<td>Employee Salary:</td>
+					<td><input type="text" name = "salary" id = "salary" #salary = "ngModel" ngModel></td>
+				</tr>
+				<tr>
+					<td>Department Number:</td>
+					<td><input type="text" name = "dno" id = "dno" #dno = "ngModel" ngModel></td>
+				</tr>
+			</table>
+			<br>
+
+	    	<input type="button"
+        	value="Save"
+        	class="btn-primary"
+        	(click)="saveEmployee(employeeForm.value)">&nbsp;&nbsp;
+
+        <input type="button"
+        value="Delete"
+        class="btn-danger"
+        (click)="deleteEmployee(employeeForm.value)">&nbsp;&nbsp;
+
+        <input type="button"
+        value="Update"
+        class="btn-success"
+        (click)="updateEmployee(employeeForm.value)">&nbsp;&nbsp;
+
+		<input type="button"
+		value="Find"
+		class = "btn-info"
+		name="emsButton"
+		(click)="findEmployee(employeeForm.value)">&nbsp;&nbsp;
+
+		<input type="button" 
+		value="FindAll" 
+		class = "btn-warning" 
+		name="emsButton"
+		(click)="findAllEmployees()">&nbsp;&nbsp;
+		<br>
+       
+	</div>
+    </form>
+    <br><br>
+
+<div class="container" style="margin-top:20px;">
+
+  @if(result != '') {
+    <div class="alert alert-info">
+      {{result}}
+    </div>
+  }
+
+  @if(employees.length > 1) {
+
+    <table class="table table-bordered table-hover">
+
+      <thead>
+
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Department No</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        @for(emp of employees; track emp.eid) {
+
+          <tr>
+
+            <td>{{emp.eid}}</td>
+            <td>{{emp.ename}}</td>
+            <td>{{emp.esalary}}</td>
+            <td>{{emp.dno}}</td>
+
+          </tr>
+
+        }
+
+      </tbody>
+
+    </table>
+
+  }
+
+  @if(employee && employee.eid) {
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Employee Salary</th>
+            <th>Department Number</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>{{employee.eid}}</td>
+            <td>{{employee.ename}}</td>
+            <td>{{employee.esalary}}</td>
+            <td>{{employee.dno}}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+}
+
+</div>
+
+</body>
+</html>
